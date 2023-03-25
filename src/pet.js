@@ -10,6 +10,7 @@ function Pet(name) {
     this.growUp = function() {
       this.age += 1;
     };
+    this.hunger = NOT_HUNGRY;
   }
 
   Pet.prototype.walk = function() {

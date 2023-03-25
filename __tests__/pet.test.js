@@ -68,3 +68,14 @@ describe('constructor', () => {
       expect(pet.fitness).toBe(10);
     });
   })
+
+  describe('feed', () => {
+    it('decreases the hunger by 3', () => {
+      const pet = new Pet('Kalb');
+
+pet.hunger = 8;
+pet.feed();
+
+      expect(pet.hunger).toEqual(5);
+    });
+  })
