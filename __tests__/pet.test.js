@@ -55,3 +55,16 @@ describe('constructor', () => {
       });
     })
   })
+
+  describe('walk', () => {
+    it('increases fitness value by 4', () => {
+      const pet = new Pet('Kalb');
+      pet.fitness = 4;
+      pet.walk();
+
+      expect(pet.fitness).toBe(8);
+      pet.walk();
+
+      expect(pet.fitness).toBe(10);
+    });
+  })

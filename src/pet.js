@@ -1,3 +1,7 @@
+const MAXIMUM_FITNESS = 10;
+const AGE_AT_BIRTH = 0;
+const NOT_HUNGRY = 0;
+
 function Pet(name) {
     this.name = name;
     this.age = 0;
@@ -15,5 +19,7 @@ function Pet(name) {
       this.fitness = 10;
     }
   }
+
+
 
 module.exports = Pet;
