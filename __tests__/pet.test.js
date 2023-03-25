@@ -31,3 +31,27 @@ describe('constructor', () => {
       expect(pet.age).toEqual(1);
     });
   });
+
+  describe('constructor', () => {
+    it('has an initial hunger of 0', () => {
+      const pet = new Pet ('Kalb');
+
+      expect(pet.hunger).toEqual(0);
+    });
+  });
+
+  describe('fitness', () => {
+    it("has an initial fitness of 10", () => {
+      const pet = new Pet('Kalb');
+
+      expect(pet.fitness).toEqual(10);
+
+      it("decreases the fitness 3", () => {
+        const pet = new Pet('Kalb');
+
+        pet.growUp();
+
+        expect(pet.fitness).toEqual(7);
+      });
+    })
+  })
