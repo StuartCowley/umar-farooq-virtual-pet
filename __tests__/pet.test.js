@@ -6,37 +6,27 @@ describe('constructor', () => {
   });
 });
 
-  describe('constructor', () => {
-    it('sets the name property', () => {
+  describe('Pet has a name property', () => {
+    it('returns the name of the specified pet', () => {
       const pet = new Pet('Kalb');
   
       expect(pet.name).toEqual('Kalb');
     });
   });
   
-  describe('constructor', () => {
+  describe('growUp', () => {
     it('has a initial age of 0', () => {
       const pet = new Pet('Kalb');
   
       expect(pet.age).toEqual(0);
     });
-  });
 
-  describe('growUp', () => {
     it('increments the age by 1', () => {
       const pet = new Pet('Kalb');
   
       pet.growUp();
   
       expect(pet.age).toEqual(1);
-    });
-  });
-
-  describe('constructor', () => {
-    it('has an initial hunger of 0', () => {
-      const pet = new Pet ('Kalb');
-
-      expect(pet.hunger).toEqual(0);
     });
   });
 
@@ -72,10 +62,30 @@ describe('constructor', () => {
   describe('feed', () => {
     it('decreases the hunger by 3', () => {
       const pet = new Pet('Kalb');
-
-pet.hunger = 8;
-pet.feed();
+      
+      pet.hunger = 8;
+      pet.feed();
 
       expect(pet.hunger).toEqual(5);
     });
   })
+
+describe('checkUp', () => {
+  it('checks how pet is feeling', () => {
+    const pet = new Pet('Kalb');
+    pet.hunger = 5;
+
+    expect(pet.checkUp()).toBe('I am hungry');
+    pet.hunger = 0;
+    pet.fitness = 3;
+
+    expect(pet.checkUp()).toBe('I need a walk!');
+    pet.hunger = 5;
+    pet.fitness = 3;
+
+    expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
+    pet.hunger = 0;
+    pet.fitness = 10;
+
+    expect(pet.checkUp()).toBe('I feel great!');
+  });
