@@ -99,21 +99,18 @@ describe('grow up', () => {
 
 describe('checkUp', () => {
   it('returns I need a walk if fitness is less than 3', () => {
-    const pet = new Pet('Kalb');
     pet.fitness = 3;
     pet.checkUp();
 
     expect(pet.checkUp()).toBe('I need a walk!');
 
     it('returns I am hungry! if hunger is greater than or equal to 5')
-    const pet = new Pet('Kalb');
     pet.hunger = 0;
     pet.fitness = 3;
 
     expect(pet.checkUp()).toBe('I am hungry');
     });
     it('returns I am hungry! and I need a walk if fitness is 3 or less AND hunger is 5 or more', () => {
-      const pet = new Pet('Kalb');
       pet.hunger = 5;
       pet.fitness = 3;
       pet.checkUp();
@@ -122,7 +119,6 @@ describe('checkUp', () => {
     });
 
 it('if neither fitness or hunger are true then return I feel great!', => () {
-  const pet = new Pet('Kalb');
   pet.fitness = 4;
   pet.hunger = 4;
   pet.checkUp();
@@ -135,4 +131,4 @@ it('if neither fitness or hunger are true then return I feel great!', => () {
     pet.age = 30;
 
     expect(() => pet.checkUp()).toThrow('Your pet is no longer alive');
-  })
+  });
