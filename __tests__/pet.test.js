@@ -89,13 +89,13 @@ describe('grow up', () => {
 
     expect(pet.age).toEqual(1);
   })
-
+},
   it('throws an error if the pet is not alive', () => {
   const pet = new Pet('Kalb');
   pet.age = 30
 
   expect(() => pet.growUp()).toThrow('Your pet is no longer alive!')
-});
+  }),
 
 describe('checkUp', () => {
   it('returns I need a walk if fitness is less than 3', () => {
@@ -103,32 +103,33 @@ describe('checkUp', () => {
     pet.checkUp();
 
     expect(pet.checkUp()).toBe('I need a walk!');
+  });
 
     it('returns I am hungry! if hunger is greater than or equal to 5')
     pet.hunger = 0;
     pet.fitness = 3;
 
     expect(pet.checkUp()).toBe('I am hungry');
-    });
+    }),
+
     it('returns I am hungry! and I need a walk if fitness is 3 or less AND hunger is 5 or more', () => {
       pet.hunger = 5;
       pet.fitness = 3;
       pet.checkUp();
       
       expect(pet.checkUp()).toBe('I am hungry AND I need a walk');
-    });
+    }),
+    
+    it('if neither fitness or hunger are true then return I feel great!', () => {
+      pet.fitness = 4;
+      pet.hunger = 4;
+      pet.checkUp();
+      expect(pet.checkUp()).toBe('I feel great!');
+    }),
 
-it('if neither fitness or hunger are true then return I feel great!', => () {
-  pet.fitness = 4;
-  pet.hunger = 4;
-  pet.checkUp();
-  
-  expect(pet.checkUp()).toBe('I feel great!');
-  });
-
-  it('it throws an error if the pet is not alive', () => {
+  it('throws an error if the pet is not alive', () => {
     const pet = new Pet ('Kalb');
     pet.age = 30;
 
     expect(() => pet.checkUp()).toThrow('Your pet is no longer alive');
-  });
+  })
