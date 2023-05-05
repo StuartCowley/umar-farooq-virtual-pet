@@ -2,11 +2,9 @@
   "name": "virtual-pet",
   "version": "1.0.0",
   "main": "index.js",
-  {
-    "scripts": {
+  "scripts": {
       "test": "jest"
-    }
-  }
+    },
   "keywords": [],
   "author": "u1986f",
   "license": "(ISC)",
